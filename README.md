@@ -2,6 +2,9 @@
 
 > A research-grounded, sensory-calm learning platform and assistive companion designed specifically for autistic children, their parents, and educators.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/anuj00018/mitra)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/anuj00018/mitra)
+
 ---
 
 ## 🌿 Core Philosophy & Sensory-Safe Design
