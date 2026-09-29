@@ -67,3 +67,6 @@ wheels/
 .installed.cfg
 *.egg
 .pytest_cache/
+
+.vercel
+.env*
