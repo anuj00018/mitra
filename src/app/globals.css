@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Calm, warm, accessible palette tailored for autism and neurodivergent sensory safety */
+    --bg-main: #FBF9F5;          /* Warm linen white - avoids glaring blue-white light */
+    --bg-surface: #FFFFFF;
+    --bg-subtle: #F3EFE6;       /* Soft warm oat/sand */
+    --bg-muted: #E8E2D5;
+    
+    --text-primary: #1C241E;     /* Deep forest charcoal - softer than harsh pure black */
+    --text-secondary: #48544C;   /* Muted charcoal */
+    --text-muted: #6B786F;
+    
+    --border-soft: #E2DBD0;
+    --border-strong: #C4BAAB;
+    
+    /* Calming Sage Green */
+    --sage-50: #F4F7F4;
+    --sage-100: #E5EDE6;
+    --sage-200: #C7D9CA;
+    --sage-500: #4B6F55;
+    --sage-600: #3D5A45;
+    --sage-700: #2F4535;
+    
+    /* Warm Sand / Terracotta */
+    --warm-50: #FCF8F3;
+    --warm-100: #F7EEE3;
+    --warm-500: #B8673E;
+    --warm-600: #9A522E;
+    
+    /* Soft Sky */
+    --sky-50: #F2F7FA;
+    --sky-100: #E1EEF5;
+    --sky-500: #3C6C82;
+    --sky-600: #2C5264;
+
+    /* Focus ring for accessibility */
+    --focus-ring: #2F4535;
+    --radius-child: 20px;
+    --radius-standard: 12px;
+  }
+
+  /* High contrast mode for visually impaired or low vision learners */
+  .high-contrast {
+    --bg-main: #FFFFFF !important;
+    --bg-surface: #FFFFFF !important;
+    --bg-subtle: #F0F0F0 !important;
+    --bg-muted: #D9D9D9 !important;
+    
+    --text-primary: #000000 !important;
+    --text-secondary: #111111 !important;
+    --text-muted: #222222 !important;
+    
+    --border-soft: #000000 !important;
+    --border-strong: #000000 !important;
+    
+    --sage-500: #1B4D27 !important;
+    --sage-600: #0E3317 !important;
+    --focus-ring: #000000 !important;
+  }
+
+  /* Text scaling */
+  .font-scale-large {
+    font-size: 112.5%; /* 18px base */
+  }
+
+  .font-scale-xlarge {
+    font-size: 125%; /* 20px base */
+  }
+
+  /* Reduced motion */
+  .reduce-motion *,
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Ensure keyboard focus is visibly unambiguous for assistive switch devices */
+  *:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+  }
+}
+
+/* Child Mode Specific Touch & Clarity Utilities */
+.child-touch-target {
+  min-height: 64px;
+  min-width: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-child);
+  font-weight: 600;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.child-card {
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border-soft);
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(47, 69, 53, 0.04);
+}
+
+.child-card-active {
+  border-color: var(--sage-500);
+  box-shadow: 0 6px 16px rgba(75, 111, 85, 0.12);
+}
